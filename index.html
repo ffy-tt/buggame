@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>手势杀虫小游戏</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>手势杀虫游戏</h1>
+    <div class="info-bar">
+      <div class="score-board">分数：<span id="score">0</span> / 30</div>
+      <div class="time-board">剩余时间：<span id="timer">300</span> 秒</div>
+    </div>
+    <div class="video-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="gameCanvas"></canvas>
+    </div>
+    <div id="winModal" class="modal">
+      <div class="modal-box">
+        <h2>🎉 Congratulation 🎉</h2>
+        <p>你成功消灭30只害虫！</p>
+        <button onclick="restartGame()">再来一局</button>
+        <button onclick="closeGame()">结束游戏</button>
+      </div>
+    </div>
+    <div id="loseModal" class="modal">
+      <div class="modal-box">
+        <h2>💀 Insect control failed</h2>
+        <p id="loseReason">分数低于0，游戏结束！</p>
+        <button onclick="restartGame()">再来一局</button>
+        <button onclick="closeGame()">结束游戏</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="sketch.js"></script>
+</body>
+</html>
